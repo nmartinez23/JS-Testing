@@ -1,18 +1,6 @@
 This is a Javascript testing project I am working on as part of the Watch and Code course.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+Please see https://github.com/joewalnes/jstinytest for the original source.
 
 Tiniest JavaScript unit testing library
 =======================================

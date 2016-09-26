@@ -1,3 +1,19 @@
+This is a Javascript testing project I am working on as part of the Watch and Code course.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Tiniest JavaScript unit testing library
 =======================================
 
@@ -37,7 +53,7 @@ Create a test page called `adder-test.html` (you can name it anything). This inc
    },
 
    'subtracts numbers': function() {
-     eq(-2, add(2, -4)); 
+     eq(-2, add(2, -4));
    },
 
  });

@@ -6,19 +6,25 @@
 // Example 3: forEach([1,2,3], function(number, index) { console.log(index); });
 // Example 4: forEach([1,2,3], function(number, index, origArr) { console.log(origArr); });
 
-function forEach(array, callback) {
-  for(var i = 0; i < array.length; i++) {
-    callback(array[i], i, array);
+function forEach(array, callback, optionalThisObject) {
+  var forEachCallback = callback;
+
+  if (optionalThisObject) {
+    forEachCallback = callback.bind(optionalThisObject);
   }
-};
+
+  for (var i = 0; i < array.length; i++) {
+    forEachCallback(array[i], i, array);
+  }
+}
 
 tests({
   'It should run the callback function array.length times.': function() {
-    var counter = 0;
+    var numberOfTimesCallbackHasRun = 0;
     forEach([1,2,3], function() {
-      counter++;
+      numberOfTimesCallbackHasRun++;
     });
-    eq(counter, 3);
+    eq(numberOfTimesCallbackHasRun, 3);
   },
   'It should pass in the ith element as the first argument to the callback.': function() {
     forEach([1], function(number) {
@@ -35,6 +41,11 @@ tests({
     forEach(testArray, function(number, index, origArr) {
       eq(testArray, origArr);
     });
+  },
+  'It should accept an optional this object.': function() {
+    forEach([1], function() {
+      eq(this.description, 'I should be accessible inside the callback.');
+    }, {description: 'I should be accessible inside the callback.'});
   }
 });
 </script>
@@ -42,19 +53,3 @@ tests({
 
 
 
-
-
-<!-- <script src="../tinytest.js"></script>
-<script src="adder.js"></script>
-<script>
-tests({
-  'adds numbers': function() {
-    eq(6, add(1, 4));
-    eq(6.6, add(2.6, 4));
-  },
-
-  'subtracts numbers': function() {
-    eq(-2, add(2, -4));
-  }
-});
-</script> -->

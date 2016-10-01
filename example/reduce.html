@@ -22,22 +22,74 @@
 // Return value:
     // Returns a single value.
 
-// Requirements:
+function reduce(array, callback, initialValue) {
+  var startingIndex = 0;
 
-// If initialValue, previousValue should start with initialValue.
-// If initialValue, currentValue should start with array[0].
-// If initialValue, callback will start at index 0.
+  if (arguments.length < 3) {
+    startingIndex++;
+  }
 
-// If no initialValue, previousValue should start with array[0].
-// If no initialValue, currentValue should start with array[1].
-// If no initialValue, callback will start at index 1.
+  for (var i = startingIndex; i < array.length; i++) {
+    callback(initialValue);
+  }
+}
 
-// If initialValue, and array is empty, return initialValue without calling callback.
-// If no initialValue, and array has one element, return element without calling callback.
+tests({
+  'If initialValue, callback should run array.length times.': function() {
+    var numberOfTimesCallbackHasRun = 0;
+    reduce([1], function() {
+      numberOfTimesCallbackHasRun++;
+    }, 0);
+    eq(numberOfTimesCallbackHasRun, 1);
+  },
+  'If no initialValue, callback should run array.length - 1 times.': function() {
+    var numberOfTimesCallbackHasRun = 0;
+    reduce([1], function() {
+      numberOfTimesCallbackHasRun++;
+    });
+    eq(numberOfTimesCallbackHasRun, 0);
+  },
+  'If initialValue, previousValue should start with initialValue.': function() {
+    reduce([1], function(previousValue) {
+      eq(previousValue, 0);
+    }, 0);
+  },
+  'If initialValue, currentValue should start with array[0].': function() {
+    fail();
+  },
+  'If initialValue, callback will start at index 0.': function() {
+    fail();
+  },
 
-// It should actually reduce.
-// It should exclude holes.
-// If array is empty, and no initialValue, throw TypeError.
-// It should pass array as fourth argument to callback.
+  'If no initialValue, previousValue should start with array[0].': function() {
+    fail();
+  },
+  'If no initialValue, currentValue should start with array[1].': function() {
+    fail();
+  },
+  'If no initialValue, callback will start at index 1.': function() {
+    fail();
+  },
+
+  'If initialValue, and array is empty, return initialValue without calling callback.': function() {
+    fail();
+  },
+  'If no initialValue, and array has one element, return element without calling callback.': function() {
+    fail();
+  },
+
+  'It should actually reduce.': function() {
+    fail();
+  },
+  'It should exclude holes.': function() {
+    fail();
+  },
+  'If array is empty, and no initialValue, throw TypeError.': function() {
+    fail();
+  },
+  'It should pass array as fourth argument to callback.': function() {
+    fail();
+  }
+});
 
 </script>

@@ -1,4 +1,4 @@
-This is a Javascript testing project I am working on as part of the Watch and Code course.
+This is a Javascript unit testing project I have completed as part of the Watch and Code course.
 
 Please see https://github.com/joewalnes/jstinytest for the original source.
 

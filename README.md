@@ -1,4 +1,4 @@
-This is a Javascript unit testing project I have completed as part of the Watch and Code course.
+This is a unit testing project I have completed as part of the Watch and Code course. Passing tests have been written for the methods of forEach, filter, map and reduce.
 
 Please see https://github.com/joewalnes/jstinytest for the original source.
 

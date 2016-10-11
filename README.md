@@ -1,4 +1,4 @@
-This is a unit testing project I have completed. Passing tests have been written for the methods of forEach, filter, map and reduce. testing git
+This is a unit testing project I have completed. Passing tests have been written for the methods of forEach, filter, map and reduce. testing git commits
 
 Please see https://github.com/joewalnes/jstinytest for the original source.
 

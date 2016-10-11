@@ -37,6 +37,7 @@
  * -Joe Walnes
  * MIT License. See https://github.com/joewalnes/jstinytest/
  */
+
 var TinyTest = {
     // testName is set to the property in each iteration.
     // Try - Catch will apply and run TinyTest or return an error stack.

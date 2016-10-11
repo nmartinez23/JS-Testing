@@ -38,7 +38,8 @@
  * MIT License. See https://github.com/joewalnes/jstinytest/
  */
 var TinyTest = {
-
+    // testName is set to the property in each iteration.
+    // Try - Catch will apply and run TinyTest or return an error stack.
     run: function(tests) {
         var failures = 0;
         for (var testName in tests) {
@@ -52,6 +53,7 @@ var TinyTest = {
                 console.error(e.stack);
             }
         }
+        // setTimeout below will allow callback to run and update DOM before javascipt.
         setTimeout(function() { // Give document a chance to complete
             if (window.document && document.body) {
                 document.body.style.backgroundColor = (failures == 0 ? '#99ff99' : '#ff9999');

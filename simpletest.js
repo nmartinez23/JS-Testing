@@ -1,8 +1,8 @@
 // DONE: Get successes to be green.
 // DONE: Make sure only one error per failure goes to the console.
-// TODO: Make failures red.
-// TODO: Show stack traces for failures.
-// TODO: Only show stack traces if you click expand.
+// DONE: Make failures red.
+// DONE: Show stack traces for failures.
+// DONE: Only show stack traces if you click expand.
 // TODO: Output summary statistics to the DOM.
 
 var TinyTest = {
@@ -18,8 +18,9 @@ var TinyTest = {
                 // console.log("%cMy stylish message", "color: green");
             } catch (e) {
                 failures++;
-                console.log('Test:', testName, 'FAILED', e);
+                console.groupCollapsed('%c' + testName, "color: red;");
                 console.error(e.stack);
+                console.groupEnd();
             }
         }
         // setTimeout webAPI will allow the DOM to update rendering before callback runs.

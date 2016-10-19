@@ -54,7 +54,7 @@ var TinyTest = {
                 console.error(e.stack);
             }
         }
-        // setTimeout below will allow the DOM to update without before javascipt runs.
+        // setTimeout webAPI will allow the DOM to update rendering before callback runs.
         setTimeout(function() { // Give document a chance to complete
             if (window.document && document.body) {
                 document.body.style.backgroundColor = (failures == 0 ? '#99ff99' : '#ff9999');

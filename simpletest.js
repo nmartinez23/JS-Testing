@@ -1,4 +1,5 @@
-// TODO: Get successes to be green.
+// DONE: Get successes to be green.
+// DONE: Make sure only one error per failure goes to the console.
 // TODO: Make failures red.
 // TODO: Show stack traces for failures.
 // TODO: Only show stack traces if you click expand.
@@ -13,10 +14,11 @@ var TinyTest = {
             var testAction = tests[testName];
             try {
                 testAction.apply(this);
-                console.log('Test:', testName, 'OK');
+                console.log('%c' + testName, "color: green;");
+                // console.log("%cMy stylish message", "color: green");
             } catch (e) {
                 failures++;
-                console.error('Test:', testName, 'FAILED', e);
+                console.log('Test:', testName, 'FAILED', e);
                 console.error(e.stack);
             }
         }

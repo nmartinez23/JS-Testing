@@ -1,10 +1,3 @@
-// DONE: Get successes to be green.
-// DONE: Make sure only one error per failure goes to the console.
-// DONE: Make failures red.
-// DONE: Show stack traces for failures.
-// DONE: Only show stack traces if you click expand.
-// DONE: Output summary statistics to the DOM.
-
 var TinyTestHelper = {
     renderStats: function(tests, failures) {
         var numberOfTests = Object.keys(tests).length;
@@ -36,7 +29,7 @@ var TinyTest = {
             }
         }
         // setTimeout webAPI will allow the DOM to update rendering before callback runs.
-        setTimeout(function() { // Give document a chance to complete
+        setTimeout(function() {
             if (window.document && document.body) {
                 document.body.style.backgroundColor = (failures == 0 ? '#99ff99' : '#ff9999');
                 TinyTestHelper.renderStats(tests, failures);

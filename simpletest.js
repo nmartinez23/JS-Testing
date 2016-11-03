@@ -28,7 +28,6 @@ var TinyTest = {
             try {
                 testAction.apply(this);
                 console.log('%c' + testName, "color: green;");
-                // console.log("%cMy stylish message", "color: green");
             } catch (e) {
                 failures++;
                 console.groupCollapsed('%c' + testName, "color: red;");
